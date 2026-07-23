@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELEMENTUM — DIY Synths & Sample Elements</title>
+<meta name="description" content="ELEMENTUM fabrica kits DIY de sintetizadores y sample packs elementales. Solda tu propio sonido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
+    <ul class="navlinks navlinks-mobile-hide">
+      <li class="current"><a href="#top">Inicio</a></li>
+      <li><a href="#elementos">Elementos</a></li>
+      <li><a href="#manifiesto">Manifiesto</a></li>
+      <li><a href="#laboratorio">Laboratorio</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#elementos" class="navcta">Ver Catálogo</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1400 700" preserveAspectRatio="none">
+        <path id="wavePath" d="M0,350 Q100,200 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350 T1400,350"
+          fill="none" stroke="#5FA893" stroke-width="1.4" opacity="0.5"/>
+      </svg>
+    </div>
+    <svg class="orbit-field" viewBox="0 0 500 500" aria-hidden="true">
+      <circle cx="250" cy="250" r="60" fill="none" stroke="#C97A4A" stroke-width="0.6" opacity="0.5"/>
+      <circle cx="250" cy="250" r="140" fill="none" stroke="#5FA893" stroke-width="0.6" opacity="0.4"/>
+      <circle cx="250" cy="250" r="210" fill="none" stroke="#8C897A" stroke-width="0.4" opacity="0.3"/>
+      <g style="transform-origin:250px 250px; animation:spin 26s linear infinite;">
+        <circle cx="250" cy="90" r="4" fill="#C97A4A"/>
+      </g>
+      <g style="transform-origin:250px 250px; animation:spin 40s linear infinite reverse;">
+        <circle cx="390" cy="250" r="3.4" fill="#5FA893"/>
+      </g>
+      <g style="transform-origin:250px 250px; animation:spin 60s linear infinite;">
+        <circle cx="250" cy="40" r="2.6" fill="#8C897A"/>
+      </g>
+    </svg>
+
+    <div class="wrap hero-content">
+      <div class="eyebrow"><span class="dot"></span> DIY SYNTHS &amp; SAMPLE ELEMENTS</div>
+      <h1>SUELDA TU<br><span>PROPIO</span> SONIDO</h1>
+      <p class="hero-sub">ELEMENTUM diseña kits de sintetizadores DIY y sample packs grabados desde materiales reales — metal, agua, madera, cobre. Cada producto es un elemento en su tabla propia: crudo, funcional, tuyo.</p>
+      <div class="hero-actions">
+        <a href="#elementos" class="btn btn-primary">Explorar Elementos</a>
+        <a href="#laboratorio" class="btn btn-ghost">Probar el Osciloscopio</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll"><span>Scroll</span><span class="line"></span></div>
+  </section>
+
+  <!-- TABLA DE ELEMENTOS / PRODUCTOS -->
+  <section id="elementos">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px;">Catálogo</div>
+          <h2>La Tabla de<br>Elementos</h2>
+        </div>
+        <div>
+          <p class="desc">Ocho elementos, dos familias: kits DIY para construir tu instrumento, y sample packs grabados a partir de materia prima real. Cada tile lleva su número atómico real.</p>
+          <div class="filters" role="tablist" aria-label="Filtrar catálogo">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="kit">Kits DIY</button>
+            <button class="filter-btn" data-filter="pack">Sample Packs</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="periodic-grid" id="grid">
+
+        <article class="tile" data-cat="kit">
+          <div class="tile-top"><span class="tile-num">50</span><span class="tile-cat">Kit DIY</span></div>
+          <div class="tile-symbol">Sn</div>
+          <div class="tile-name">Sine — Oscilador VCO</div>
+          <div class="tile-desc">Bobinado a mano, BOM completo, sin SMD.</div>
+          <div class="tile-price"><span>Desde</span><b>$89</b></div>
+        </article>
+
+        <article class="tile" data-cat="kit">
+          <div class="tile-top"><span class="tile-num">26</span><span class="tile-cat">Kit DIY</span></div>
+          <div class="tile-symbol">Fe</div>
+          <div class="tile-name">Forge — Filtro SVF</div>
+          <div class="tile-desc">Resonancia hasta autooscilación total.</div>
+          <div class="tile-price"><span>Desde</span><b>$74</b></div>
+        </article>
+
+        <article class="tile" data-cat="kit">
+          <div class="tile-top"><span class="tile-num">29</span><span class="tile-cat">Kit DIY</span></div>
+          <div class="tile-symbol">Cu</div>
+          <div class="tile-name">Circuit — Starter Eurorack</div>
+          <div class="tile-desc">Todo para armar tu primer rack de 3 módulos.</div>
+          <div class="tile-price"><span>Desde</span><b>$219</b></div>
+        </article>
+
+        <article class="tile" data-cat="kit">
+          <div class="tile-top"><span class="tile-num">18</span><span class="tile-cat">Kit DIY</span></div>
+          <div class="tile-symbol">Ar</div>
+          <div class="tile-name">Arc — Secuenciador 8-Step</div>
+          <div class="tile-desc">CV/Gate, arma tú mismo el panel.</div>
+          <div class="tile-price"><span>Desde</span><b>$95</b></div>
+        </article>
+
+        <article class="tile" data-cat="pack">
+          <div class="tile-top"><span class="tile-num">1</span><span class="tile-cat">Sample Pack</span></div>
+          <div class="tile-symbol">H</div>
+          <div class="tile-name">Hydra — Texturas de Agua</div>
+          <div class="tile-desc">400 samples granulares grabados con hidrófono.</div>
+          <div class="tile-price"><span>Desde</span><b>$24</b></div>
+        </article>
+
+        <article class="tile" data-cat="pack">
+          <div class="tile-top"><span class="tile-num">6</span><span class="tile-cat">Sample Pack</span></div>
+          <div class="tile-symbol">C</div>
+          <div class="tile-name">Carbon — Fundición de Drums</div>
+          <div class="tile-desc">600 hits de seis drum machines vintage.</div>
+          <div class="tile-price"><span>Desde</span><b>$29</b></div>
+        </article>
+
+        <article class="tile" data-cat="pack">
+          <div class="tile-top"><span class="tile-num">8</span><span class="tile-cat">Sample Pack</span></div>
+          <div class="tile-symbol">O</div>
+          <div class="tile-name">Oxide — Óxido &amp; Metal</div>
+          <div class="tile-desc">Grabaciones de campo con micrófono de contacto.</div>
+          <div class="tile-price"><span>Desde</span><b>$19</b></div>
+        </article>
+
+        <article class="tile" data-cat="pack">
+          <div class="tile-top"><span class="tile-num">7</span><span class="tile-cat">Sample Pack</span></div>
+          <div class="tile-symbol">N</div>
+          <div class="tile-name">Nebula — Drones Ambientales</div>
+          <div class="tile-desc">12GB de camas modulares en evolución constante.</div>
+          <div class="tile-price"><span>Desde</span><b>$34</b></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFIESTO -->
+  <section class="manifesto" id="manifiesto">
+    <div class="wrap">
+      <div class="section-head" style="border-color:var(--line);">
+        <div>
+          <div class="eyebrow" style="margin-bottom:14px;">Filosofía</div>
+          <h2>Cuatro<br>Elementos</h2>
+        </div>
+        <p class="desc">No hacemos cajas negras. Hacemos instrumentos que puedes abrir, entender y reparar. Estos son los principios que sueldan cada kit.</p>
+      </div>
+
+      <div class="principles">
+        <div class="principle">
+          <div class="principle-badge"><span class="num">22</span><span class="el">Ti</span></div>
+          <h3>Hecho para Durar</h3>
+          <p>Cada kit sale con componentes through-hole y PCBs gruesas. Nada de piezas que se rompen al segundo intento de soldadura.</p>
+        </div>
+        <div class="principle">
+          <div class="principle-badge"><span class="num">14</span><span class="el">Si</span></div>
+          <h3>Ingeniería, no Suposición</h3>
+          <p>Cada esquema se prueba en banco antes de salir. Documentación real, medidas reales, sin atajos de fábrica.</p>
+        </div>
+        <div class="principle">
+          <div class="principle-badge"><span class="num">47</span><span class="el">Ag</span></div>
+          <h3>Señal Antes que Ruido</h3>
+          <p>Priorizamos el sonido sobre la decoración. Un circuito limpio suena mejor que un panel bonito.</p>
+        </div>
+        <div class="principle">
+          <div class="principle-badge"><span class="num">79</span><span class="el">Au</span></div>
+          <h3>Esquemas Abiertos</h3>
+          <p>Todo diagrama, BOM y firmware es de código abierto. Tu instrumento, tus modificaciones, sin permisos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-track" aria-hidden="true">
+      <span>Fe · <b>Forge</b> Filter</span>
+      <span>Cu · <b>Circuit</b> Starter</span>
+      <span>H · <b>Hydra</b> Textures</span>
+      <span>Sn · <b>Sine</b> VCO</span>
+      <span>C · <b>Carbon</b> Foundry</span>
+      <span>Ar · <b>Arc</b> Sequencer</span>
+      <span>O · <b>Oxide</b> Field Rec.</span>
+      <span>N · <b>Nebula</b> Drones</span>
+      <span>Fe · <b>Forge</b> Filter</span>
+      <span>Cu · <b>Circuit</b> Starter</span>
+      <span>H · <b>Hydra</b> Textures</span>
+      <span>Sn · <b>Sine</b> VCO</span>
+      <span>C · <b>Carbon</b> Foundry</span>
+      <span>Ar · <b>Arc</b> Sequencer</span>
+      <span>O · <b>Oxide</b> Field Rec.</span>
+      <span>N · <b>Nebula</b> Drones</span>
+    </div>
+  </div>
+
+  <!-- LABORATORIO / OSCILOSCOPIO -->
+  <section id="laboratorio">
+    <div class="wrap">
+      <div class="scope-copy">
+        <div class="eyebrow">Laboratorio en Vivo</div>
+        <h2>Antes de soldar,<br>escucha la forma.</h2>
+        <p>Cada kit ELEMENTUM parte de una forma de onda cruda. Prueba las cuatro formas base que vas a construir con tus propias manos — sin nada de software de por medio.</p>
+        <div class="wave-select" id="waveSelect">
+          <button class="wave-btn active" data-wave="sine">Sine</button>
+          <button class="wave-btn" data-wave="square">Square</button>
+          <button class="wave-btn" data-wave="saw">Saw</button>
+          <button class="wave-btn" data-wave="triangle">Triangle</button>
+        </div>
+      </div>
+
+      <div class="scope-panel">
+        <div class="scope-panel-head"><span><span class="led"></span>OSC-01 · LIVE</span><span id="waveLabel">SINE</span></div>
+        <canvas id="scope" width="640" height="220"></canvas>
+        <div class="scope-controls">
+          <div class="knob-group">
+            <div class="knob" id="knobFreq" style="--rot:-40deg" tabindex="0" role="slider" aria-label="Frecuencia" aria-valuemin="1" aria-valuemax="10" aria-valuenow="4"></div>
+            <span class="knob-label">Freq</span>
+          </div>
+          <div class="knob-group">
+            <div class="knob" id="knobAmp" style="--rot:0deg" tabindex="0" role="slider" aria-label="Amplitud" aria-valuemin="1" aria-valuemax="10" aria-valuenow="5"></div>
+            <span class="knob-label">Amp</span>
+          </div>
+          <div class="knob-group">
+            <div class="knob" id="knobNoise" style="--rot:-60deg" tabindex="0" role="slider" aria-label="Ruido" aria-valuemin="0" aria-valuemax="10" aria-valuenow="1"></div>
+            <span class="knob-label">Noise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / NEWSLETTER -->
+  <section class="cta-section" id="contacto">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center; display:inline-flex;">Únete al Laboratorio</div>
+      <h2>Nuevos elementos,<br>cada temporada.</h2>
+      <p>Recibe aviso cuando lancemos un kit o sample pack nuevo, además de guías de construcción y descuentos para early builders.</p>
+      <form class="signup-form" id="signupForm">
+        <input type="email" required placeholder="tu@email.com" aria-label="Correo electrónico">
+        <button type="submit">Suscribirme</button>
+      </form>
+      <p class="form-note" id="formNote">Sin spam. Un correo por lanzamiento, nada más.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
+        <p>Kits DIY de sintetizadores y sample packs grabados desde materia prima real. Construido para quien quiere entender lo que suena.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Catálogo</h4>
+        <ul>
+          <li><a href="#elementos">Kits DIY</a></li>
+          <li><a href="#elementos">Sample Packs</a></li>
+          <li><a href="#elementos">Novedades</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="#">Guías de Construcción</a></li>
+          <li><a href="#">Esquemas &amp; BOM</a></li>
+          <li><a href="#">Foro ELEMENTUM</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Conecta</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ELEMENTUM. Todos los derechos reservados.</span>
+      <span><a href="#">Términos</a> · <a href="#">Privacidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
