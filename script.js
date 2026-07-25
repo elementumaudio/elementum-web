@@ -1,4 +1,4 @@
-// Sticky nav background on scroll
+  // Sticky nav background on scroll
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
     header.classList.toggle('solid', window.scrollY > 40);
