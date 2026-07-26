@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELEMENTUM — DIY Synths & Sample Elements</title>
+<meta name="description" content="ELEMENTUM fabrica kits DIY de sintetizadores y sample packs elementales. Moldea tu propio sonido.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="siteHeader">
+  <nav class="wrap">
+    <a href="index.html#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
+    <ul class="navlinks navlinks-mobile-hide">
+      <li class="current"><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+      <li><a href="samples.html" data-i18n="nav.samples">Samples</a></li>
+      <li><a href="soundsets.html" data-i18n="nav.soundsets">Soundsets</a></li>
+      <li class="nav-diy" tabindex="0">
+        <span data-i18n="nav.diy">DIY KITs</span>
+        <span class="diy-tooltip" data-i18n="nav.coming_soon">¡Coming Soon!</span>
+      </li>
+      <li><a href="acerca.html" data-i18n="nav.about">Acerca</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">ES</button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="es">Español</button>
+          <button data-lang="en">English</button>
+          <button data-lang="fr">Français</button>
+          <button data-lang="de">Deutsch</button>
+          <button data-lang="ja">日本語</button>
+        </div>
+      </div>
+      <div class="community-switch">
+        <button class="navcta" id="communityBtn" aria-haspopup="true" aria-expanded="false" data-i18n="nav.community">Community</button>
+        <div class="community-menu" id="communityMenu">
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://soundcloud.com" target="_blank" rel="noopener">SoundCloud</a>
+          <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://x.com" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO SLIDER -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1400 700" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="waveGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="0" spreadMethod="repeat">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="50%" stop-color="#3E8FE0"/>
+            <stop offset="100%" stop-color="#FFFFFF"/>
+            <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="400 0" dur="6s" repeatCount="indefinite"/>
+          </linearGradient>
+        </defs>
+        <path id="wavePath" d="M0,350 Q100,200 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350 T1400,350"
+          fill="none" stroke="url(#waveGrad)" stroke-width="1.6" opacity="0.65"/>
+      </svg>
+    </div>
+    <svg class="orbit-field" viewBox="0 0 500 500" aria-hidden="true">
+      <circle cx="250" cy="250" r="60" fill="none" stroke="#C97A4A" stroke-width="0.6" opacity="0.5"/>
+      <circle cx="250" cy="250" r="140" fill="none" stroke="#5FA893" stroke-width="0.6" opacity="0.4"/>
+      <circle cx="250" cy="250" r="210" fill="none" stroke="#8C897A" stroke-width="0.4" opacity="0.3"/>
+      <g style="transform-origin:250px 250px; animation:spin 26s linear infinite;">
+        <circle cx="250" cy="90" r="4" fill="#C97A4A"/>
+      </g>
+      <g style="transform-origin:250px 250px; animation:spin 40s linear infinite reverse;">
+        <circle cx="390" cy="250" r="3.4" fill="#5FA893"/>
+      </g>
+      <g style="transform-origin:250px 250px; animation:spin 60s linear infinite;">
+        <circle cx="250" cy="40" r="2.6" fill="#8C897A"/>
+      </g>
+    </svg>
+
+    <div class="hero-slider" id="heroSlider">
+
+      <!-- Slide 1 — brand mark (placeholder until custom art is ready) -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-logo">
+          <span class="hero-slide-mark">Em</span>
+          <span class="hero-slide-word">ELEMENTUM</span>
+        </div>
+      </div>
+
+      <!-- Slide 2 — main hero copy -->
+      <div class="hero-slide" data-slide="1">
+        <div class="wrap hero-content">
+          <div class="eyebrow"><span class="dot"></span> <span data-i18n="home.eyebrow">DIY SYNTHS & SAMPLE ELEMENTS</span></div>
+          <h1><span data-i18n="home.h1_line1">MOLDEA TU</span><br><span data-i18n="home.h1_span">PROPIO</span> <span data-i18n="home.h1_line2">SONIDO</span></h1>
+          <p class="hero-sub" data-i18n="home.sub">ELEMENTUM diseña kits de sintetizadores DIY y sample packs grabados desde materiales reales — metal, agua, madera, cobre. Cada producto es un elemento en su tabla propia: crudo, funcional, tuyo.</p>
+          <div class="hero-actions">
+            <a href="samples.html" class="btn btn-primary" data-i18n="home.cta_primary">Explorar Elementos</a>
+            <a href="samples.html" class="btn btn-ghost" data-i18n="home.cta_secondary">Ver Catálogo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 — new sample -->
+      <div class="hero-slide hero-slide-image" data-slide="2">
+        <img src="assets/reflex-i.jpg" alt="Reflex I — Kicks Techno">
+        <div class="hero-slide-caption">
+          <span class="eyebrow" data-i18n="home.slide_new_sample">Nuevo Sample</span>
+          <h3>Reflex I — Kicks Techno</h3>
+        </div>
+      </div>
+
+      <!-- Slide 4 — new soundset -->
+      <div class="hero-slide hero-slide-image" data-slide="3">
+        <img src="assets/spirals.jpg" alt="Spirals — Melodic Techno Soundset">
+        <div class="hero-slide-caption">
+          <span class="eyebrow" data-i18n="home.slide_new_soundset">Nuevo Soundset</span>
+          <h3>Spirals — Melodic Techno (Sylenth1)</h3>
+        </div>
+      </div>
+
+      <!-- Slide 5 — MIDI pack (placeholder until artwork is ready) -->
+      <div class="hero-slide" data-slide="4">
+        <div class="hero-slide-logo">
+          <span class="hero-slide-mark">M</span>
+          <span class="hero-slide-word" data-i18n="home.slide_new_midi">Nuevo MIDI Pack</span>
+          <span class="hero-slide-soon" data-i18n="home.slide_midi_soon">Próximamente</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero-dots" id="heroDots" aria-hidden="true">
+      <button class="hero-dot active" data-goto="0" aria-label="Slide 1"></button>
+      <button class="hero-dot" data-goto="1" aria-label="Slide 2"></button>
+      <button class="hero-dot" data-goto="2" aria-label="Slide 3"></button>
+      <button class="hero-dot" data-goto="3" aria-label="Slide 4"></button>
+      <button class="hero-dot" data-goto="4" aria-label="Slide 5"></button>
+    </div>
+
+    <div class="hero-scroll"><span data-i18n="home.scroll">Scroll</span><span class="line"></span></div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-track" aria-hidden="true">
+      <span>SPIRALS · Melodic Techno</span>
+      <span>COSMIC · Trance</span>
+      <span>REFLEX I · Kicks Techno</span>
+      <span>SONIDO FUTURA · Melodic Techno II</span>
+      <span>THE RETURN · Albert Martz</span>
+      <span>SKYLIGHT · Albert Martz</span>
+      <span>ACROSS THE SKY · Albert Martz</span>
+      <span>SURRENDER · Albert Martz</span>
+      <span>SPIRALS · Melodic Techno</span>
+      <span>COSMIC · Trance</span>
+      <span>REFLEX I · Kicks Techno</span>
+      <span>SONIDO FUTURA · Melodic Techno II</span>
+      <span>THE RETURN · Albert Martz</span>
+      <span>SKYLIGHT · Albert Martz</span>
+      <span>ACROSS THE SKY · Albert Martz</span>
+      <span>SURRENDER · Albert Martz</span>
+    </div>
+  </div>
+
+  <!-- ÚLTIMOS LANZAMIENTOS (teaser) -->
+  <section id="lanzamientos" style="padding-bottom:60px;">
+    <div class="wrap">
+      <div class="eyebrow" style="margin-bottom:14px;" data-i18n="home.releases_eyebrow">Últimos Lanzamientos</div>
+
+      <div class="products-teaser-grid">
+        <a class="product-teaser" href="samples.html">
+          <img src="assets/spirals.jpg" alt="Spirals — Melodic Techno" loading="lazy">
+          <span class="product-teaser-tag">Spirals — Melodic Techno</span>
+        </a>
+        <a class="product-teaser" href="samples.html">
+          <img src="assets/cosmic.jpg" alt="Cosmic — Trance" loading="lazy">
+          <span class="product-teaser-tag">Cosmic — Trance</span>
+        </a>
+        <a class="product-teaser" href="samples.html">
+          <img src="assets/reflex-i.jpg" alt="Reflex I — Kicks Techno" loading="lazy">
+          <span class="product-teaser-tag">Reflex I — Kicks Techno</span>
+        </a>
+        <a class="product-teaser" href="samples.html">
+          <img src="assets/sonido-futura.jpg" alt="Sonido Futura — Melodic Techno II" loading="lazy">
+          <span class="product-teaser-tag">Sonido Futura — Melodic Techno II</span>
+        </a>
+        <a class="product-teaser" href="samples.html">
+          <img src="assets/the-return.jpg" alt="Albert Martz — The Return" loading="lazy">
+          <span class="product-teaser-tag">Albert Martz — The Return</span>
+        </a>
+        <a class="product-teaser" href="samples.html">
+          <img src="assets/skylight.jpg" alt="Albert Martz — Skylight" loading="lazy">
+          <span class="product-teaser-tag">Albert Martz — Skylight</span>
+        </a>
+        <a class="product-teaser" href="samples.html">
+          <img src="assets/across-the-sky.jpg" alt="Albert Martz — Across The Sky" loading="lazy">
+          <span class="product-teaser-tag">Albert Martz — Across The Sky</span>
+        </a>
+        <a class="product-teaser" href="samples.html">
+          <img src="assets/surrender.jpg" alt="Albert Martz — Surrender" loading="lazy">
+          <span class="product-teaser-tag">Albert Martz — Surrender</span>
+        </a>
+      </div>
+
+      <div class="view-more-wrap">
+        <a href="samples.html" class="btn btn-ghost" data-i18n="home.view_more">Ver Más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMA DE ONDA (decorativo, auto-animado) -->
+  <section id="onda">
+    <div class="wrap">
+      <div class="eyebrow" style="margin-bottom:14px;" data-i18n="home.onda_eyebrow">Forma de Onda en Vivo</div>
+      <h2><span data-i18n="home.onda_title1">El sonido,</span><br><span data-i18n="home.onda_title2">en constante forma.</span></h2>
+
+      <div class="onda-visual">
+        <svg id="ondaSvg" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <defs>
+            <linearGradient id="ondaGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="600" y2="0" spreadMethod="repeat">
+              <stop offset="0%" stop-color="#EDE8DA"/>
+              <stop offset="33%" stop-color="#6EA0C4"/>
+              <stop offset="66%" stop-color="#5FA893"/>
+              <stop offset="100%" stop-color="#EDE8DA"/>
+              <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="600 0" dur="8s" repeatCount="indefinite"/>
+            </linearGradient>
+          </defs>
+          <circle cx="600" cy="210" r="95" fill="none" stroke="#C97A4A" stroke-width="0.6" opacity="0.3"/>
+          <circle cx="600" cy="210" r="155" fill="none" stroke="#5FA893" stroke-width="0.5" opacity="0.24"/>
+          <circle cx="600" cy="210" r="205" fill="none" stroke="#8C897A" stroke-width="0.4" opacity="0.18"/>
+          <path id="ondaPath" d="M0,210 L1200,210" fill="none" stroke="url(#ondaGrad)" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUSCRIPCIÓN -->
+  <section class="cta-section" id="unete">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center; display:inline-flex;" data-i18n="home.subscribe_eyebrow">Únete al Laboratorio</div>
+      <h2><span data-i18n="home.subscribe_title1">Sé el primero</span><br><span data-i18n="home.subscribe_title2">en enterarte.</span></h2>
+      <p data-i18n="home.subscribe_desc">Recibe aviso cuando lancemos un kit, sample, soundset o MIDI pack nuevo — nada más.</p>
+      <form class="signup-form" id="signupForm">
+        <input type="email" required placeholder="tu@email.com" data-i18n-placeholder="acerca.email_placeholder" aria-label="Correo electrónico">
+        <button type="submit" data-i18n="acerca.submit">Suscribirme</button>
+      </form>
+      <p class="form-note" id="formNote" data-i18n="acerca.note">Sin spam. Un correo por lanzamiento, nada más.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
+        <p data-i18n="footer.brand_desc">Kits DIY de sintetizadores y sample packs grabados desde materia prima real. Construido para quien quiere entender lo que suena.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_catalog">Catálogo</h4>
+        <ul>
+          <li><a href="samples.html" data-i18n="footer.catalog_samples">Samples</a></li>
+          <li><a href="soundsets.html" data-i18n="footer.catalog_soundsets">Soundsets</a></li>
+          <li><a href="samples.html" data-i18n="footer.catalog_midi">MIDI Packs</a></li>
+          <li class="footer-diy" tabindex="0">
+            <span data-i18n="nav.diy">DIY KITs</span>
+            <span class="diy-tooltip diy-tooltip-up" data-i18n="nav.coming_soon">¡Coming Soon!</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_support">Soporte</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer.support_faq">Preguntas Frecuentes</a></li>
+          <li><a href="#" data-i18n="footer.support_licensing">Licencias de Uso</a></li>
+          <li><a href="acerca.html" data-i18n="footer.support_contact">Soporte por Correo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_connect">Community</h4>
+        <ul>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener" data-i18n="footer.connect_instagram">Instagram</a></li>
+          <li><a href="https://youtube.com" target="_blank" rel="noopener" data-i18n="footer.connect_youtube">YouTube</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener" data-i18n="footer.connect_facebook">Facebook</a></li>
+          <li><a href="https://soundcloud.com" target="_blank" rel="noopener" data-i18n="footer.connect_soundcloud">SoundCloud</a></li>
+          <li><a href="https://x.com" target="_blank" rel="noopener" data-i18n="footer.connect_x">X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 ELEMENTUM. Todos los derechos reservados.</span>
+      <span><a href="#" data-i18n="footer.terms">Términos</a> · <a href="#" data-i18n="footer.privacy">Privacidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script src="i18n.js" defer></script>
+
+</body>
+</html>
