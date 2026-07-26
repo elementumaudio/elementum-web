@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELEMENTUM — Acerca</title>
+<meta name="description" content="Un pequeño laboratorio dedicado a instrumentos que puedes abrir, entender y reparar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="siteHeader" class="solid">
+  <nav class="wrap">
+    <a href="index.html#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
+    <ul class="navlinks navlinks-mobile-hide">
+      <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+      <li><a href="samples.html" data-i18n="nav.samples">Samples</a></li>
+      <li><a href="soundsets.html" data-i18n="nav.soundsets">Soundsets</a></li>
+      <li class="nav-diy" tabindex="0">
+        <span data-i18n="nav.diy">DIY KITs</span>
+        <span class="diy-tooltip" data-i18n="nav.coming_soon">¡Coming Soon!</span>
+      </li>
+      <li class="current"><a href="acerca.html" data-i18n="nav.about">Acerca</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">ES</button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="es">Español</button>
+          <button data-lang="en">English</button>
+          <button data-lang="fr">Français</button>
+          <button data-lang="de">Deutsch</button>
+          <button data-lang="ja">日本語</button>
+        </div>
+      </div>
+      <div class="community-switch">
+        <button class="navcta" id="communityBtn" aria-haspopup="true" aria-expanded="false" data-i18n="nav.community">Community</button>
+        <div class="community-menu" id="communityMenu">
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://soundcloud.com" target="_blank" rel="noopener">SoundCloud</a>
+          <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://x.com" target="_blank" rel="noopener">X</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ACERCA / NEWSLETTER -->
+  <section class="cta-section" id="acerca" style="padding-top:200px;">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center; display:inline-flex;" data-i18n="acerca.eyebrow">Acerca de ELEMENTUM</div>
+      <h2><span data-i18n="acerca.title_line1">Elementos,</span><br><span data-i18n="acerca.title_line2">desde cero.</span></h2>
+      <p data-i18n="acerca.desc">Somos un pequeño laboratorio dedicado a instrumentos que se pueden abrir, entender y reparar. Recibe aviso cuando lancemos un kit o sample pack nuevo, además de guías de construcción y descuentos para early builders.</p>
+      <form class="signup-form" id="signupForm">
+        <input type="email" required placeholder="tu@email.com" data-i18n-placeholder="acerca.email_placeholder" aria-label="Correo electrónico">
+        <button type="submit" data-i18n="acerca.submit">Suscribirme</button>
+      </form>
+      <p class="form-note" id="formNote" data-i18n="acerca.note">Sin spam. Un correo por lanzamiento, nada más.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
+        <p data-i18n="footer.brand_desc">Kits DIY de sintetizadores y sample packs grabados desde materia prima real. Construido para quien quiere entender lo que suena.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_catalog">Catálogo</h4>
+        <ul>
+          <li><a href="samples.html" data-i18n="footer.catalog_samples">Samples</a></li>
+          <li><a href="soundsets.html" data-i18n="footer.catalog_soundsets">Soundsets</a></li>
+          <li><a href="samples.html" data-i18n="footer.catalog_midi">MIDI Packs</a></li>
+          <li class="footer-diy" tabindex="0">
+            <span data-i18n="nav.diy">DIY KITs</span>
+            <span class="diy-tooltip diy-tooltip-up" data-i18n="nav.coming_soon">¡Coming Soon!</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_support">Soporte</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer.support_faq">Preguntas Frecuentes</a></li>
+          <li><a href="#" data-i18n="footer.support_licensing">Licencias de Uso</a></li>
+          <li><a href="acerca.html" data-i18n="footer.support_contact">Soporte por Correo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.col_connect">Community</h4>
+        <ul>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener" data-i18n="footer.connect_instagram">Instagram</a></li>
+          <li><a href="https://youtube.com" target="_blank" rel="noopener" data-i18n="footer.connect_youtube">YouTube</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener" data-i18n="footer.connect_facebook">Facebook</a></li>
+          <li><a href="https://soundcloud.com" target="_blank" rel="noopener" data-i18n="footer.connect_soundcloud">SoundCloud</a></li>
+          <li><a href="https://x.com" target="_blank" rel="noopener" data-i18n="footer.connect_x">X</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 ELEMENTUM. Todos los derechos reservados.</span>
+      <span><a href="#" data-i18n="footer.terms">Términos</a> · <a href="#" data-i18n="footer.privacy">Privacidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+<script src="i18n.js" defer></script>
+
+</body>
+</html>
