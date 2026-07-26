@@ -1,160 +1,201 @@
+  // Safe wrapper: some preview/embedded environments don't implement matchMedia.
+  // An unguarded call throws and silently kills the rest of this script.
+  function prefersReducedMotion(){
+    try{
+      return typeof window.matchMedia === 'function'
+        && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    }catch(e){
+      return false;
+    }
+  }
+
   // Sticky nav background on scroll
   const header = document.getElementById('siteHeader');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('solid', window.scrollY > 40);
-  }, { passive:true });
+  if(header){
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('solid', window.scrollY > 40);
+    }, { passive:true });
+  }
 
-  // Filter catalog
+  // Community dropdown (opens on click, closes on second click or outside click)
+  const communityBtn = document.getElementById('communityBtn');
+  const communityMenu = document.getElementById('communityMenu');
+  if(communityBtn && communityMenu){
+    communityBtn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const open = communityMenu.classList.toggle('open');
+      communityBtn.setAttribute('aria-expanded', open);
+      document.getElementById('langMenu')?.classList.remove('open');
+    });
+  }
+  document.addEventListener('click', ()=>{
+    communityMenu?.classList.remove('open');
+    communityBtn?.setAttribute('aria-expanded','false');
+    document.getElementById('langMenu')?.classList.remove('open');
+    document.getElementById('langBtn')?.setAttribute('aria-expanded','false');
+  });
+
+  // Filter catalog (samples.html only)
   const filterBtns = document.querySelectorAll('.filter-btn');
   const tiles = document.querySelectorAll('.tile');
-  filterBtns.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      filterBtns.forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      tiles.forEach(t=>{
-        t.classList.toggle('hidden', f!=='all' && t.dataset.cat!==f);
+  if(filterBtns.length && tiles.length){
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        tiles.forEach(t=>{
+          t.classList.toggle('hidden', f!=='all' && t.dataset.cat!==f);
+        });
       });
     });
-  });
+  }
 
-  // Animated hero waveform (gentle drifting sine path)
+  // Animated hero waveform background path (index.html only)
   const wavePath = document.getElementById('wavePath');
-  let t0 = 0;
-  function animateHeroWave(ts){
-    t0 += 0.006;
-    const amp = 60;
-    let d = "M0,350 ";
-    for(let x=0; x<=1400; x+=40){
-      const y = 350 + Math.sin(x*0.008 + t0)*amp*Math.sin(t0*0.5+1);
-      d += `L${x},${y.toFixed(1)} `;
+  if(wavePath && !prefersReducedMotion()){
+    let t0 = 0;
+    function animateHeroWave(ts){
+      t0 += 0.006;
+      const amp = 60;
+      let d = "M0,350 ";
+      for(let x=0; x<=1400; x+=40){
+        const y = 350 + Math.sin(x*0.008 + t0)*amp*Math.sin(t0*0.5+1);
+        d += `L${x},${y.toFixed(1)} `;
+      }
+      wavePath.setAttribute('d', d);
+      requestAnimationFrame(animateHeroWave);
     }
-    wavePath.setAttribute('d', d);
     requestAnimationFrame(animateHeroWave);
   }
-  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    requestAnimationFrame(animateHeroWave);
+
+  // ---------- HERO SLIDER (index.html only) ----------
+  const heroSlider = document.getElementById('heroSlider');
+  if(heroSlider){
+    const slides = Array.from(heroSlider.querySelectorAll('.hero-slide'));
+    const dots = Array.from(document.querySelectorAll('#heroDots .hero-dot'));
+    let current = 0;
+    const SLIDE_DURATION = 5500;
+    let timer = null;
+
+    function goToSlide(i){
+      slides[current].classList.remove('active');
+      dots[current]?.classList.remove('active');
+      current = (i + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current]?.classList.add('active');
+    }
+    function nextSlide(){ goToSlide(current + 1); }
+
+    function startAutoplay(){
+      clearInterval(timer);
+      if(prefersReducedMotion()) return;
+      timer = setInterval(nextSlide, SLIDE_DURATION);
+    }
+
+    dots.forEach(dot=>{
+      dot.addEventListener('click', ()=>{
+        goToSlide(parseInt(dot.dataset.goto, 10));
+        startAutoplay();
+      });
+    });
+
+    startAutoplay();
   }
 
-  // Oscilloscope
-  const canvas = document.getElementById('scope');
-  const ctx = canvas.getContext('2d');
-  let waveType = 'sine';
-  let freq = 4, amp = 5, noise = 1;
-  let phase = 0;
+  // ---------- LIVE WAVEFORM — SVG, borderless, morphing shapes + flowing gradient ----------
+  const ondaPath = document.getElementById('ondaPath');
+  if(ondaPath){
+    const VIEW_W = 1200, VIEW_H = 420, MID_Y = 210, AMP = 140;
+    const WAVE_ORDER = ['sine','saw','triangle','square','random','noise'];
+    let waveIndex = 0;
+    let waveType = WAVE_ORDER[0];
+    let nextType = WAVE_ORDER[1];
+    let morph = 0;
+    let transitioning = false;
+    let phase = 0;
 
-  function resizeCanvas(){
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * devicePixelRatio;
-    canvas.height = rect.height * devicePixelRatio;
-    ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
-  }
-  window.addEventListener('resize', resizeCanvas);
+    // Smooth, precise pseudo-noise via interpolated random walk (for the "noise" stage)
+    const NOISE_RES = 40;
+    const noisePoints = Array.from({length: NOISE_RES + 1}, ()=> Math.random()*2-1);
+    let noiseOffset = 0;
+    function smoothNoise(xNorm){
+      const pos = (xNorm * NOISE_RES + noiseOffset) % NOISE_RES;
+      const i0 = Math.floor(pos) % NOISE_RES;
+      const i1 = (i0 + 1) % NOISE_RES;
+      const f = pos - Math.floor(pos);
+      const eased = f*f*(3-2*f);
+      return noisePoints[i0]*(1-eased) + noisePoints[i1]*eased;
+    }
 
-  function waveValue(x, type){
-    const period = (2*Math.PI) / (freq*0.6+0.5);
-    const p = (x*0.02 + phase) % period / period; // 0..1
-    switch(type){
-      case 'sine': return Math.sin(p*2*Math.PI);
-      case 'square': return Math.sin(p*2*Math.PI) >= 0 ? 1 : -1;
-      case 'saw': return (p*2-1);
-      case 'triangle': return 1 - 4*Math.abs(Math.round(p - 0.25) - (p - 0.25));
-      default: return 0;
+    function rawWave(xNorm, type, freqCycles){
+      const p = (xNorm * freqCycles + phase) % 1;
+      switch(type){
+        case 'sine': return Math.sin(p*2*Math.PI);
+        case 'square': return Math.sin(p*2*Math.PI) >= 0 ? 1 : -1;
+        case 'saw': return (p*2-1);
+        case 'triangle': return 1 - 4*Math.abs(Math.round(p - 0.25) - (p - 0.25));
+        case 'random': return Math.sin(p*40 + phase*30) * 0.5 + (Math.random()*2-1)*0.5;
+        case 'noise': return smoothNoise(xNorm) * 0.9;
+        default: return 0;
+      }
+    }
+
+    function drawOnda(){
+      const freqCycles = 3.2;
+      let d = '';
+      const STEP = 6;
+      for(let x=0; x<=VIEW_W; x+=STEP){
+        const xNorm = x / VIEW_W;
+        let v = rawWave(xNorm, waveType, freqCycles);
+        if(transitioning){
+          const v2 = rawWave(xNorm, nextType, freqCycles);
+          v = v*(1-morph) + v2*morph;
+        }
+        const y = MID_Y - v*AMP;
+        d += (x===0 ? `M${x},${y.toFixed(1)} ` : `L${x},${y.toFixed(1)} `);
+      }
+      ondaPath.setAttribute('d', d);
+
+      phase += 0.012;
+      noiseOffset += 0.05;
+
+      requestAnimationFrame(drawOnda);
+    }
+
+    function beginTransition(){
+      transitioning = true;
+      morph = 0;
+      const step = ()=>{
+        morph += 0.02;
+        if(morph >= 1){
+          morph = 1;
+          transitioning = false;
+          waveIndex = (waveIndex + 1) % WAVE_ORDER.length;
+          waveType = WAVE_ORDER[waveIndex];
+          nextType = WAVE_ORDER[(waveIndex + 1) % WAVE_ORDER.length];
+          return;
+        }
+        requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(drawOnda);
+    if(!prefersReducedMotion()){
+      setInterval(beginTransition, 4200);
     }
   }
 
-  function drawScope(){
-    const w = canvas.clientWidth, h = canvas.clientHeight;
-    ctx.clearRect(0,0,w,h);
-
-    // grid
-    ctx.strokeStyle = 'rgba(237,232,218,0.06)';
-    ctx.lineWidth = 1;
-    for(let gx=0; gx<w; gx+=w/12){ ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,h); ctx.stroke(); }
-    for(let gy=0; gy<h; gy+=h/6){ ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(w,gy); ctx.stroke(); }
-
-    // waveform
-    ctx.beginPath();
-    ctx.strokeStyle = '#5FA893';
-    ctx.lineWidth = 2;
-    ctx.shadowColor = '#5FA893';
-    ctx.shadowBlur = 6;
-    const midY = h/2;
-    const ampPx = (amp/10) * (h*0.4);
-    for(let x=0; x<=w; x++){
-      let v = waveValue(x, waveType);
-      if(noise>0){ v += (Math.random()-0.5) * (noise/10) * 0.4; }
-      const y = midY - v*ampPx;
-      if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
-    }
-    ctx.stroke();
-    ctx.shadowBlur = 0;
-
-    phase += 0.15 + freq*0.02;
-    requestAnimationFrame(drawScope);
-  }
-
-  resizeCanvas();
-  requestAnimationFrame(drawScope);
-
-  // wave select buttons
-  const waveBtns = document.querySelectorAll('.wave-btn');
-  const waveLabel = document.getElementById('waveLabel');
-  waveBtns.forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      waveBtns.forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      waveType = btn.dataset.wave;
-      waveLabel.textContent = waveType.toUpperCase();
-    });
-  });
-
-  // knobs (drag vertically to change value)
-  function setupKnob(el, {min=0,max=10,initial=5,onChange}){
-    let value = initial;
-    let dragging = false;
-    let startY = 0, startVal = value;
-
-    function applyRotation(){
-      const pct = (value-min)/(max-min);
-      const deg = -130 + pct*260;
-      el.style.setProperty('--rot', deg+'deg');
-      el.setAttribute('aria-valuenow', value.toFixed(1));
-      onChange(value);
-    }
-    applyRotation();
-
-    el.addEventListener('pointerdown', e=>{
-      dragging = true; startY = e.clientY; startVal = value;
-      el.setPointerCapture(e.pointerId);
-      el.style.cursor='grabbing';
-    });
-    window.addEventListener('pointermove', e=>{
-      if(!dragging) return;
-      const dy = startY - e.clientY;
-      value = Math.min(max, Math.max(min, startVal + dy*0.06));
-      applyRotation();
-    });
-    window.addEventListener('pointerup', e=>{
-      if(!dragging) return;
-      dragging=false; el.style.cursor='grab';
-    });
-    el.addEventListener('keydown', e=>{
-      if(e.key==='ArrowUp' || e.key==='ArrowRight'){ value=Math.min(max,value+0.5); applyRotation(); }
-      if(e.key==='ArrowDown' || e.key==='ArrowLeft'){ value=Math.max(min,value-0.5); applyRotation(); }
-    });
-  }
-
-  setupKnob(document.getElementById('knobFreq'), {min:1,max:10,initial:4, onChange:v=>freq=v});
-  setupKnob(document.getElementById('knobAmp'),  {min:1,max:10,initial:5, onChange:v=>amp=v});
-  setupKnob(document.getElementById('knobNoise'),{min:0,max:10,initial:1, onChange:v=>noise=v});
-
-  // newsletter form (UI only)
+  // newsletter form (any page with a signup form)
   const form = document.getElementById('signupForm');
   const note = document.getElementById('formNote');
-  form.addEventListener('submit', e=>{
-    e.preventDefault();
-    note.textContent = '¡Gracias! Revisa tu correo para confirmar la suscripción.';
-    note.style.color = 'var(--verdigris)';
-    form.reset();
-  });
+  if(form && note){
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      const dict = (typeof ELEMENTUM_I18N !== 'undefined' && ELEMENTUM_I18N[document.documentElement.getAttribute('lang')]) || null;
+      note.textContent = (dict && dict.acerca && dict.acerca.success) || '¡Gracias! Revisa tu correo para confirmar la suscripción.';
+      note.style.color = 'var(--verdigris)';
+      form.reset();
+    });
+  }
