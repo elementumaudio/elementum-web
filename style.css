@@ -152,8 +152,49 @@
   }
   .navcta:hover{ border-color:var(--copper); color:var(--copper); }
   .navlinks-mobile-hide{display:flex;}
+
+  /* Hamburger toggle (hidden on desktop) */
+  .nav-toggle{
+    display:none;
+    flex-direction:column; align-items:center; justify-content:center;
+    gap:5px;
+    width:36px; height:36px;
+    background:transparent; border:1px solid var(--line-strong); border-radius:2px;
+    padding:0; cursor:pointer; flex-shrink:0;
+  }
+  .nav-toggle span{
+    width:16px; height:1.5px; background:var(--paper);
+    transition:transform .25s ease, opacity .2s ease;
+  }
+  .nav-toggle.open span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+
   @media (max-width:760px){
-    .navlinks-mobile-hide{ display:none; }
+    .nav-toggle{ display:flex; }
+
+    /* The main nav links become a full-width dropdown panel under the header */
+    .navlinks-mobile-hide{
+      display:flex; flex-direction:column; gap:0;
+      position:absolute; top:100%; left:0; right:0;
+      background:#0A0B07; border-bottom:1px solid var(--line-strong);
+      max-height:0; overflow:hidden;
+      opacity:0; visibility:hidden;
+      transition:max-height .3s ease, opacity .2s ease, visibility .2s ease;
+    }
+    .navlinks-mobile-hide.open{
+      max-height:400px; opacity:1; visibility:visible;
+      overflow:auto;
+    }
+    .navlinks-mobile-hide li{
+      width:100%; padding:16px clamp(20px,5vw,56px);
+      border-top:1px solid var(--line);
+      font-size:0.9rem;
+    }
+    .navlinks-mobile-hide li:first-child{ border-top:none; }
+    .navlinks-mobile-hide a{ display:block; }
+    .navlinks-mobile-hide .diy-tooltip{ position:static; transform:none; opacity:1; background:none; color:var(--stone); padding:6px 0 0; font-size:0.65rem; }
+    .navlinks-mobile-hide .diy-tooltip::before{ display:none; }
   }
 
   /* DIY KITs — hover freeze + "Coming Soon" tooltip (shared by nav and footer) */

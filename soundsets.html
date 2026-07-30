@@ -15,7 +15,7 @@
 <header id="siteHeader" class="solid">
   <nav class="wrap">
     <a href="index.html#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
-    <ul class="navlinks navlinks-mobile-hide">
+    <ul class="navlinks navlinks-mobile-hide" id="navLinksMobile">
       <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
       <li><a href="samples.html" data-i18n="nav.samples">Samples</a></li>
       <li class="current"><a href="soundsets.html" data-i18n="nav.soundsets">Soundsets</a></li>
@@ -46,6 +46,9 @@
           <a href="https://x.com" target="_blank" rel="noopener">X</a>
         </div>
       </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinksMobile">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 </header>

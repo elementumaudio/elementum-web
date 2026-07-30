@@ -28,11 +28,43 @@
       document.getElementById('langMenu')?.classList.remove('open');
     });
   }
-  document.addEventListener('click', ()=>{
+
+  // Mobile nav menu (hamburger)
+  const navToggle = document.getElementById('navToggle');
+  const navLinksMobile = document.getElementById('navLinksMobile');
+  function closeMobileNav(){
+    navLinksMobile?.classList.remove('open');
+    navToggle?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded','false');
+  }
+  if(navToggle && navLinksMobile){
+    navToggle.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const open = navLinksMobile.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open);
+      // Closing the community/lang dropdowns so only one panel is open at a time
+      communityMenu?.classList.remove('open');
+      document.getElementById('langMenu')?.classList.remove('open');
+    });
+    // Close the mobile menu after tapping a link
+    navLinksMobile.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click', closeMobileNav);
+    });
+    // Keep the menu closed if the viewport grows back to desktop size
+    window.addEventListener('resize', ()=>{
+      if(window.innerWidth > 760) closeMobileNav();
+    });
+  }
+
+  document.addEventListener('click', (e)=>{
     communityMenu?.classList.remove('open');
     communityBtn?.setAttribute('aria-expanded','false');
     document.getElementById('langMenu')?.classList.remove('open');
     document.getElementById('langBtn')?.setAttribute('aria-expanded','false');
+    if(navLinksMobile && !navLinksMobile.contains(e.target) && e.target!==navToggle){
+      closeMobileNav();
+    }
   });
 
   // Filter catalog (samples.html only)
