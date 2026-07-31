@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ELEMENTUM — Samples</title>
-<meta name="description" content="Kits DIY de sintetizadores y sample packs grabados desde materiales reales.">
+<meta name="description" content="ELEMENTUM fabrica kits DIY de sintetizadores,MIDI Controllers y sample packs, soundsets. Moldea tu propio sonido.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://elementumaudio.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="/assets/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -14,15 +17,15 @@
 
 <header id="siteHeader" class="solid">
   <nav class="wrap">
-    <a href="index.html#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
-    <ul class="navlinks navlinks-mobile-hide">
+    <a href="index.html#top" class="logo"><img src="assets/elementum-wordmark.svg" alt="ELEMENTUM" class="logo-svg"></a>
+    <ul class="navlinks navlinks-mobile-hide" id="navLinksMobile">
       <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
-      <li class="current"><a href="samples.html" data-i18n="nav.samples">Samples</a></li>
-      <li><a href="soundsets.html" data-i18n="nav.soundsets">Soundsets</a></li>
+      <li class="current"><a href="samples.html" data-i18n="nav.samples">Sounds</a></li>
       <li class="nav-diy" tabindex="0">
         <span data-i18n="nav.diy">DIY KITs</span>
-        <span class="diy-tooltip" data-i18n="nav.coming_soon">¡Coming Soon!</span>
+        <span class="diy-tooltip" data-i18n="nav.coming_soon">Coming Soon</span>
       </li>
+      <li><a href="soundsets.html" data-i18n="nav.soundsets">Elementum Lab</a></li>
       <li><a href="acerca.html" data-i18n="nav.about">Acerca</a></li>
     </ul>
     <div class="nav-right">
@@ -46,106 +49,21 @@
           <a href="https://x.com" target="_blank" rel="noopener">X</a>
         </div>
       </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinksMobile">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 </header>
 
 <main>
 
-  <!-- TABLA DE ELEMENTOS / PRODUCTOS -->
-  <section id="elementos" style="padding-top:170px;">
+   <!-- PRODUCTOS EN GUMROAD -->
+  <section id="lanzamientos" style="padding-bottom:60px;">
     <div class="wrap">
       <div class="section-head">
         <div>
-          <div class="eyebrow" style="margin-bottom:14px;" data-i18n="samples.eyebrow">Catálogo</div>
-          <h2><span data-i18n="samples.title_line1">La Tabla de</span><br><span data-i18n="samples.title_line2">Elementos</span></h2>
-        </div>
-        <div>
-          <p class="desc" data-i18n="samples.desc">Ocho elementos, dos familias: kits DIY para construir tu instrumento, y sample packs grabados a partir de materia prima real. Cada tile lleva su número atómico real.</p>
-          <div class="filters" role="tablist" aria-label="Filtrar catálogo">
-            <button class="filter-btn active" data-filter="all" data-i18n="samples.filter_all">Todos</button>
-            <button class="filter-btn" data-filter="kit" data-i18n="samples.filter_kit">Kits DIY</button>
-            <button class="filter-btn" data-filter="pack" data-i18n="samples.filter_pack">Sample Packs</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="periodic-grid" id="grid">
-
-        <article class="tile" data-cat="kit">
-          <div class="tile-top"><span class="tile-num">50</span><span class="tile-cat" data-i18n="samples.cat_kit">Kit DIY</span></div>
-          <div class="tile-symbol">Sn</div>
-          <div class="tile-name" data-i18n="samples.tile1.name">Sine — Oscilador VCO</div>
-          <div class="tile-desc" data-i18n="samples.tile1.desc">Bobinado a mano, BOM completo, sin SMD.</div>
-          <div class="tile-price"><span data-i18n="samples.price_label">Desde</span><b>$89</b></div>
-        </article>
-
-        <article class="tile" data-cat="kit">
-          <div class="tile-top"><span class="tile-num">26</span><span class="tile-cat" data-i18n="samples.cat_kit">Kit DIY</span></div>
-          <div class="tile-symbol">Fe</div>
-          <div class="tile-name" data-i18n="samples.tile2.name">Forge — Filtro SVF</div>
-          <div class="tile-desc" data-i18n="samples.tile2.desc">Resonancia hasta autooscilación total.</div>
-          <div class="tile-price"><span data-i18n="samples.price_label">Desde</span><b>$74</b></div>
-        </article>
-
-        <article class="tile" data-cat="kit">
-          <div class="tile-top"><span class="tile-num">29</span><span class="tile-cat" data-i18n="samples.cat_kit">Kit DIY</span></div>
-          <div class="tile-symbol">Cu</div>
-          <div class="tile-name" data-i18n="samples.tile3.name">Circuit — Starter Eurorack</div>
-          <div class="tile-desc" data-i18n="samples.tile3.desc">Todo para armar tu primer rack de 3 módulos.</div>
-          <div class="tile-price"><span data-i18n="samples.price_label">Desde</span><b>$219</b></div>
-        </article>
-
-        <article class="tile" data-cat="kit">
-          <div class="tile-top"><span class="tile-num">18</span><span class="tile-cat" data-i18n="samples.cat_kit">Kit DIY</span></div>
-          <div class="tile-symbol">Ar</div>
-          <div class="tile-name" data-i18n="samples.tile4.name">Arc — Secuenciador 8-Step</div>
-          <div class="tile-desc" data-i18n="samples.tile4.desc">CV/Gate, arma tú mismo el panel.</div>
-          <div class="tile-price"><span data-i18n="samples.price_label">Desde</span><b>$95</b></div>
-        </article>
-
-        <article class="tile" data-cat="pack">
-          <div class="tile-top"><span class="tile-num">1</span><span class="tile-cat" data-i18n="samples.cat_pack">Sample Pack</span></div>
-          <div class="tile-symbol">H</div>
-          <div class="tile-name" data-i18n="samples.tile5.name">Hydra — Texturas de Agua</div>
-          <div class="tile-desc" data-i18n="samples.tile5.desc">400 samples granulares grabados con hidrófono.</div>
-          <div class="tile-price"><span data-i18n="samples.price_label">Desde</span><b>$24</b></div>
-        </article>
-
-        <article class="tile" data-cat="pack">
-          <div class="tile-top"><span class="tile-num">6</span><span class="tile-cat" data-i18n="samples.cat_pack">Sample Pack</span></div>
-          <div class="tile-symbol">C</div>
-          <div class="tile-name" data-i18n="samples.tile6.name">Carbon — Fundición de Drums</div>
-          <div class="tile-desc" data-i18n="samples.tile6.desc">600 hits de seis drum machines vintage.</div>
-          <div class="tile-price"><span data-i18n="samples.price_label">Desde</span><b>$29</b></div>
-        </article>
-
-        <article class="tile" data-cat="pack">
-          <div class="tile-top"><span class="tile-num">8</span><span class="tile-cat" data-i18n="samples.cat_pack">Sample Pack</span></div>
-          <div class="tile-symbol">O</div>
-          <div class="tile-name" data-i18n="samples.tile7.name">Oxide — Óxido & Metal</div>
-          <div class="tile-desc" data-i18n="samples.tile7.desc">Grabaciones de campo con micrófono de contacto.</div>
-          <div class="tile-price"><span data-i18n="samples.price_label">Desde</span><b>$19</b></div>
-        </article>
-
-        <article class="tile" data-cat="pack">
-          <div class="tile-top"><span class="tile-num">7</span><span class="tile-cat" data-i18n="samples.cat_pack">Sample Pack</span></div>
-          <div class="tile-symbol">N</div>
-          <div class="tile-name" data-i18n="samples.tile8.name">Nebula — Drones Ambientales</div>
-          <div class="tile-desc" data-i18n="samples.tile8.desc">12GB de camas modulares en evolución constante.</div>
-          <div class="tile-price"><span data-i18n="samples.price_label">Desde</span><b>$34</b></div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTOS EN GUMROAD -->
-  <section id="gumroad-products" style="padding-top:0;">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <div class="eyebrow" style="margin-bottom:14px;" data-i18n="samples.gumroad_eyebrow">Disponible en Gumroad</div>
+          <div class="eyebrow" style="margin-bottom:14px;" data-i18n="samples.gumroad_eyebrow">Ultimos Lanzamientos</div>
           <h2><span data-i18n="samples.gumroad_title">Más Sonido,</span><br><span data-i18n="samples.gumroad_title2">Más Elementos</span></h2>
         </div>
         <p class="desc" data-i18n="samples.gumroad_note">Cada tarjeta te lleva directo a su página de Gumroad.</p>
@@ -154,66 +72,34 @@
       <div class="products-grid">
 
         <a class="product-card" href="https://gumroad.com/l/REEMPLAZA-spirals" target="_blank" rel="noopener noreferrer">
-          <img src="assets/spirals.jpg" alt="Spirals — Melodic Techno (Sylenth1)" loading="lazy">
+          <img src="assets/essentials-kicks.jpg" alt="Essentials — Kicks I" loading="lazy">
           <div class="product-card-info">
-            <span class="product-card-name">Spirals — Melodic Techno</span>
-            <span class="product-card-tag">$9</span>
+            <span class="product-card-name">Essentials — Kicks I</span>
+            <span class="product-card-tag">Free</span>
           </div>
         </a>
 
         <a class="product-card" href="https://gumroad.com/l/REEMPLAZA-cosmic" target="_blank" rel="noopener noreferrer">
-          <img src="assets/cosmic.jpg" alt="Cosmic — Trance" loading="lazy">
+          <img src="assets/essentials-snares.jpg" alt="Essentials — Snares I" loading="lazy">
           <div class="product-card-info">
-            <span class="product-card-name">Cosmic — Trance</span>
-            <span class="product-card-tag">$9</span>
+            <span class="product-card-name">Essentials — Snares I</span>
+            <span class="product-card-tag">Free</span>
           </div>
         </a>
 
         <a class="product-card" href="https://gumroad.com/l/REEMPLAZA-reflex-i" target="_blank" rel="noopener noreferrer">
-          <img src="assets/reflex-i.jpg" alt="Reflex I — Kicks Techno" loading="lazy">
+          <img src="assets/essentials-claps.jpg" alt="Essentials — Claps I" loading="lazy">
           <div class="product-card-info">
-            <span class="product-card-name">Reflex I — Kicks Techno</span>
-            <span class="product-card-tag">$9</span>
+            <span class="product-card-name">Essentials — Claps I</span>
+            <span class="product-card-tag">Free</span>
           </div>
         </a>
 
         <a class="product-card" href="https://gumroad.com/l/REEMPLAZA-sonido-futura" target="_blank" rel="noopener noreferrer">
-          <img src="assets/sonido-futura.jpg" alt="Sonido Futura — Melodic Techno II" loading="lazy">
+          <img src="assets/essentials-hats.jpg" alt="Essentials — Hats I" loading="lazy">
           <div class="product-card-info">
-            <span class="product-card-name">Sonido Futura — Melodic Techno II</span>
-            <span class="product-card-tag">$9</span>
-          </div>
-        </a>
-
-        <a class="product-card" href="https://gumroad.com/l/REEMPLAZA-the-return" target="_blank" rel="noopener noreferrer">
-          <img src="assets/the-return.jpg" alt="Albert Martz — The Return" loading="lazy">
-          <div class="product-card-info">
-            <span class="product-card-name">Albert Martz — The Return</span>
-            <span class="product-card-tag">$2</span>
-          </div>
-        </a>
-
-        <a class="product-card" href="https://gumroad.com/l/REEMPLAZA-skylight" target="_blank" rel="noopener noreferrer">
-          <img src="assets/skylight.jpg" alt="Albert Martz — Skylight" loading="lazy">
-          <div class="product-card-info">
-            <span class="product-card-name">Albert Martz — Skylight</span>
-            <span class="product-card-tag">$2</span>
-          </div>
-        </a>
-
-        <a class="product-card" href="https://gumroad.com/l/REEMPLAZA-across-the-sky" target="_blank" rel="noopener noreferrer">
-          <img src="assets/across-the-sky.jpg" alt="Albert Martz — Across The Sky" loading="lazy">
-          <div class="product-card-info">
-            <span class="product-card-name">Albert Martz — Across The Sky</span>
-            <span class="product-card-tag">$2</span>
-          </div>
-        </a>
-
-        <a class="product-card" href="https://gumroad.com/l/REEMPLAZA-surrender" target="_blank" rel="noopener noreferrer">
-          <img src="assets/surrender.jpg" alt="Albert Martz — Surrender" loading="lazy">
-          <div class="product-card-info">
-            <span class="product-card-name">Albert Martz — Surrender</span>
-            <span class="product-card-tag">$2</span>
+            <span class="product-card-name">Essentials — Hats I</span>
+            <span class="product-card-tag">Free</span>
           </div>
         </a>
 
@@ -227,31 +113,37 @@
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html#top" class="logo"><span class="mark">Em</span>ELEMENTUM</a>
+        <a href="index.html#top" class="logo"><img src="assets/elementum-wordmark.svg" alt="ELEMENTUM" class="logo-svg"></a>
         <p data-i18n="footer.brand_desc">Kits DIY de sintetizadores y sample packs grabados desde materia prima real. Construido para quien quiere entender lo que suena.</p>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.col_catalog">Catálogo</h4>
         <ul>
-          <li><a href="samples.html" data-i18n="footer.catalog_kits">Kits DIY</a></li>
-          <li><a href="samples.html" data-i18n="footer.catalog_packs">Sample Packs</a></li>
-          <li><a href="samples.html" data-i18n="footer.catalog_new">Novedades</a></li>
+          <li><a href="samples.html" data-i18n="footer.catalog_samples">Samples</a></li>
+          <li><a href="soundsets.html" data-i18n="footer.catalog_soundsets">Soundsets</a></li>
+          <li><a href="samples.html" data-i18n="footer.catalog_midi">MIDI Packs</a></li>
+          <li class="footer-diy" tabindex="0">
+            <span data-i18n="nav.diy">DIY KITs</span>
+            <span class="diy-tooltip diy-tooltip-up" data-i18n="nav.coming_soon">¡Coming Soon!</span>
+          </li>
         </ul>
       </div>
       <div class="footer-col">
         <h4 data-i18n="footer.col_support">Soporte</h4>
         <ul>
-          <li><a href="#" data-i18n="footer.support_guides">Guías de Construcción</a></li>
-          <li><a href="#" data-i18n="footer.support_bom">Esquemas & BOM</a></li>
-          <li><a href="#" data-i18n="footer.support_forum">Foro ELEMENTUM</a></li>
+          <li><a href="#" data-i18n="footer.support_faq">Preguntas Frecuentes</a></li>
+          <li><a href="#" data-i18n="footer.support_licensing">Licencias de Uso</a></li>
+          <li><a href="acerca.html" data-i18n="footer.support_contact">Soporte por Correo</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer.col_connect">Conecta</h4>
+        <h4 data-i18n="footer.col_connect">Community</h4>
         <ul>
           <li><a href="https://instagram.com" target="_blank" rel="noopener" data-i18n="footer.connect_instagram">Instagram</a></li>
           <li><a href="https://youtube.com" target="_blank" rel="noopener" data-i18n="footer.connect_youtube">YouTube</a></li>
-          <li><a href="acerca.html" data-i18n="footer.connect_contact">Contacto</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener" data-i18n="footer.connect_facebook">Facebook</a></li>
+          <li><a href="https://soundcloud.com" target="_blank" rel="noopener" data-i18n="footer.connect_soundcloud">SoundCloud</a></li>
+          <li><a href="https://x.com" target="_blank" rel="noopener" data-i18n="footer.connect_x">X</a></li>
         </ul>
       </div>
     </div>
