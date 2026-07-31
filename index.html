@@ -58,37 +58,6 @@
 
 <main>
 
-  <!-- HERO SLIDER -->
-  <section class="hero" id="top">
-    <div class="hero-bg" aria-hidden="true">
-      <svg viewBox="0 0 1400 700" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="waveGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="0" spreadMethod="repeat">
-            <stop offset="0%" stop-color="#FFFFFF"/>
-            <stop offset="50%" stop-color="#3E8FE0"/>
-            <stop offset="100%" stop-color="#FFFFFF"/>
-            <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="400 0" dur="6s" repeatCount="indefinite"/>
-          </linearGradient>
-        </defs>
-        <path id="wavePath" d="M0,350 Q100,200 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350 T1400,350"
-          fill="none" stroke="url(#waveGrad)" stroke-width="1.6" opacity="0.65"/>
-      </svg>
-    </div>
-    <svg class="orbit-field" viewBox="0 0 500 500" aria-hidden="true">
-      <circle cx="250" cy="250" r="60" fill="none" stroke="#C97A4A" stroke-width="0.6" opacity="0.5"/>
-      <circle cx="250" cy="250" r="140" fill="none" stroke="#5FA893" stroke-width="0.6" opacity="0.4"/>
-      <circle cx="250" cy="250" r="210" fill="none" stroke="#8C897A" stroke-width="0.4" opacity="0.3"/>
-      <g style="transform-origin:250px 250px; animation:spin 26s linear infinite;">
-        <circle cx="250" cy="90" r="4" fill="#C97A4A"/>
-      </g>
-      <g style="transform-origin:250px 250px; animation:spin 40s linear infinite reverse;">
-        <circle cx="390" cy="250" r="3.4" fill="#5FA893"/>
-      </g>
-      <g style="transform-origin:250px 250px; animation:spin 60s linear infinite;">
-        <circle cx="250" cy="40" r="2.6" fill="#8C897A"/>
-      </g>
-    </svg>
-
     <div class="hero-slider" id="heroSlider">
 
       <!-- Slide 1 -->
@@ -166,6 +135,37 @@
       </div>
     </div>
   </section>
+
+   <!-- HERO SLIDER -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <svg viewBox="0 0 1400 700" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="waveGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="400" y2="0" spreadMethod="repeat">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="50%" stop-color="#3E8FE0"/>
+            <stop offset="100%" stop-color="#FFFFFF"/>
+            <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="400 0" dur="6s" repeatCount="indefinite"/>
+          </linearGradient>
+        </defs>
+        <path id="wavePath" d="M0,350 Q100,200 200,350 T400,350 T600,350 T800,350 T1000,350 T1200,350 T1400,350"
+          fill="none" stroke="url(#waveGrad)" stroke-width="1.6" opacity="0.65"/>
+      </svg>
+    </div>
+    <svg class="orbit-field" viewBox="0 0 500 500" aria-hidden="true">
+      <circle cx="250" cy="250" r="60" fill="none" stroke="#C97A4A" stroke-width="0.6" opacity="0.5"/>
+      <circle cx="250" cy="250" r="140" fill="none" stroke="#5FA893" stroke-width="0.6" opacity="0.4"/>
+      <circle cx="250" cy="250" r="210" fill="none" stroke="#8C897A" stroke-width="0.4" opacity="0.3"/>
+      <g style="transform-origin:250px 250px; animation:spin 26s linear infinite;">
+        <circle cx="250" cy="90" r="4" fill="#C97A4A"/>
+      </g>
+      <g style="transform-origin:250px 250px; animation:spin 40s linear infinite reverse;">
+        <circle cx="390" cy="250" r="3.4" fill="#5FA893"/>
+      </g>
+      <g style="transform-origin:250px 250px; animation:spin 60s linear infinite;">
+        <circle cx="250" cy="40" r="2.6" fill="#8C897A"/>
+      </g>
+    </svg>
 
   <!-- MOLDEA TU PROPIO SONIDO (reubicado desde el hero) -->
   <section id="moldea">
