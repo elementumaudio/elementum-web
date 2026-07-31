@@ -1,4 +1,11 @@
   @font-face{
+    font-family:'Cygre Thin';
+    src:url('fonts/Cygre-Thin.ttf') format('truetype');
+    font-weight:100 400;
+    font-style:normal;
+    font-display:swap;
+  }
+  @font-face{
     font-family:'Cygre';
     src:url('fonts/Cygre-Light.ttf') format('truetype');
     font-weight:300;
@@ -39,7 +46,7 @@
     --line: rgba(237,232,218,0.12);
     --line-strong: rgba(237,232,218,0.22);
     --display: 'Cygre', 'Big Shoulders Display', sans-serif;
-    --mono: 'JetBrains Mono', monospace;
+    --mono: 'Cygre Thin', 'Cygre', sans-serif;
     --body: 'Work Sans', sans-serif;
   }
 
@@ -65,6 +72,7 @@
   ul{list-style:none;}
   img,svg{display:block; max-width:100%;}
   button{ font-family:inherit; background:none; border:none; padding:0; margin:0; cursor:pointer; color:inherit; }
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 
   .eyebrow{
     font-family:var(--mono);
@@ -90,7 +98,33 @@
     padding:0 clamp(20px,5vw,56px);
   }
 
-  /* ---------- NAV ---------- */
+  /* ---------- SIMPLE CENTERED PAGES (Lab / Acerca) ---------- */
+  .simple-page{
+    min-height:78vh; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding-top:170px; padding-bottom:120px;
+  }
+  .simple-page .wrap{ max-width:640px; }
+  .simple-page .lab-logo{ max-width:520px; width:80%; margin:0 auto 44px; }
+  .simple-page h1{
+    font-family:var(--display); font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:26px;
+  }
+  .simple-page .tagline{
+    font-family:var(--display); font-weight:600; text-transform:none;
+    font-size:clamp(1.2rem,2.2vw,1.55rem); color:var(--paper); margin-bottom:26px; line-height:1.4;
+  }
+  .simple-page p{
+    font-family:var(--body); font-size:1.02rem; color:var(--stone);
+    line-height:1.75; margin-bottom:16px;
+  }
+  .simple-page .final-line{
+    margin-top:30px; font-family:var(--mono); font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase;
+    background-image:linear-gradient(90deg, #3E8FE0, var(--verdigris), var(--paper));
+    -webkit-background-clip:text; background-clip:text;
+    color:transparent; -webkit-text-fill-color:transparent;
+  }
+  @media (max-width:760px){
+    .simple-page{ padding-top:130px; padding-bottom:90px; min-height:auto; }
+  }
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
     padding:18px 0;
@@ -223,7 +257,7 @@
   }
   .diy-tooltip{
     position:absolute; left:50%; top:calc(100% + 14px); transform:translateX(-50%) translateY(-4px);
-    background:var(--copper); color:var(--bg);
+    background:linear-gradient(90deg, #3E8FE0, var(--verdigris), var(--paper)); color:var(--bg);
     font-family:var(--mono); font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase;
     padding:7px 14px; border-radius:2px; white-space:nowrap;
     opacity:0; pointer-events:none;
@@ -233,7 +267,7 @@
   }
   .diy-tooltip::before{
     content:''; position:absolute; bottom:100%; left:50%; transform:translateX(-50%);
-    border:5px solid transparent; border-bottom-color:var(--copper);
+    border:5px solid transparent; border-bottom-color:var(--verdigris);
   }
   .nav-diy:hover .diy-tooltip, .nav-diy:focus-visible .diy-tooltip{
     opacity:1; transform:translateX(-50%) translateY(0);
@@ -250,7 +284,7 @@
   }
   .diy-tooltip-up::before{
     bottom:auto; top:100%;
-    border-bottom-color:transparent; border-top-color:var(--copper);
+    border-bottom-color:transparent; border-top-color:var(--verdigris);
   }
   .footer-diy:hover .diy-tooltip, .footer-diy:focus-visible .diy-tooltip{
     opacity:1; transform:translateX(-50%) translateY(0);
@@ -285,7 +319,13 @@
     padding:9px 12px; border-radius:2px; cursor:pointer;
     transition:background .15s ease, color .15s ease;
   }
-  .lang-menu button:hover, .community-menu a:hover{ background:var(--bg-panel-2); color:var(--paper); }
+  .lang-menu button:hover{ background:var(--bg-panel-2); color:var(--paper); }
+  .community-menu a:hover{
+    background:var(--bg-panel-2);
+    background-image:linear-gradient(90deg, #3E8FE0, var(--verdigris), var(--paper));
+    -webkit-background-clip:text; background-clip:text;
+    color:transparent; -webkit-text-fill-color:transparent;
+  }
   .lang-menu button.active{
     background-image:linear-gradient(90deg, #3E8FE0, var(--verdigris), var(--paper));
     -webkit-background-clip:text; background-clip:text;
@@ -434,6 +474,8 @@
   }
   @media (max-width:760px){ .hero-dots{ bottom:20px; } }
   section{ position:relative; padding:120px 0; }
+  #moldea{ overflow:hidden; }
+  #moldea .wrap{ position:relative; z-index:2; }
   .section-head{
     display:flex; justify-content:space-between; align-items:flex-end;
     gap:30px; margin-bottom:60px; flex-wrap:wrap;
@@ -693,6 +735,12 @@
     -webkit-background-clip:text; background-clip:text;
     color:transparent; -webkit-text-fill-color:transparent;
   }
+  .social-icons{ display:flex; gap:16px; margin-top:2px; }
+  .social-icons li{ opacity:1; }
+  .social-icons a{ display:flex; color:var(--paper); opacity:0.85; transition:opacity .25s ease; }
+  .social-icons a:hover{ opacity:1; }
+  .social-icons svg{ width:19px; height:19px; fill:currentColor; transition:fill .25s ease; }
+  .social-icons a:hover svg{ fill:url(#socialGrad); }
   .footer-bottom{
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
     padding-top:26px; border-top:1px solid var(--line);

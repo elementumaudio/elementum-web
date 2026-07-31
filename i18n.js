@@ -22,7 +22,7 @@ const ELEMENTUM_I18N = {
       desc:"Ocho elementos, dos familias: kits DIY para construir tu instrumento, y sample packs grabados a partir de materia prima real. Cada tile lleva su número atómico real.",
       filter_all:"Todos", filter_kit:"Kits DIY", filter_pack:"Sample Packs",
       cat_kit:"Kit DIY", cat_pack:"Sample Pack", price_label:"Desde",
-      gumroad_eyebrow:"Ultimos Lanzamientos",
+      gumroad_eyebrow:"Disponible en Gumroad",
       gumroad_title:"Más Sonido,",
       gumroad_title2:"Más Elementos",
       gumroad_note:"Cada tarjeta te lleva directo a su página de Gumroad.",
@@ -45,6 +45,10 @@ const ELEMENTUM_I18N = {
     },
     acerca:{
       eyebrow:"Acerca de ELEMENTUM", title_line1:"Elementos,", title_line2:"desde cero.",
+      title:"Acerca de Elementum", tagline:"Elementos, desde cero.",
+      p1:"Elementum es un espacio donde la creatividad, la tecnología y el aprendizaje convergen.",
+      p2:"Creamos y compartimos recursos que ayudan a transformar ideas en proyectos, ofreciendo herramientas de calidad para quienes disfrutan crear, experimentar y construir.",
+      p3:"Estamos creciendo constantemente, incorporando nuevos contenidos, explorando nuevas posibilidades y desarrollando proyectos que amplían el universo de Elementum.",
       desc:"Somos un pequeño laboratorio dedicado a instrumentos que se pueden abrir, entender y reparar. Recibe aviso cuando lancemos un kit o sample pack nuevo, además de guías de construcción y descuentos para early builders.",
       email_placeholder:"tu@email.com", submit:"Suscribirme",
       note:"Sin spam. Un correo por lanzamiento, nada más.",
@@ -54,7 +58,7 @@ const ELEMENTUM_I18N = {
       brand_desc:"Kits DIY de sintetizadores y sample packs grabados desde materia prima real. Construido para quien quiere entender lo que suena.",
       col_catalog:"Catálogo", catalog_kits:"Kits DIY", catalog_packs:"Sample Packs", catalog_new:"Novedades",
       col_support:"Soporte", support_guides:"Guías de Construcción", support_bom:"Esquemas & BOM", support_forum:"Foro ELEMENTUM",
-      col_connect:"Conecta", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Contacto",
+      col_connect:"Community", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Contacto",
       copyright:"© 2026 ELEMENTUM. Todos los derechos reservados.", terms:"Términos", privacy:"Privacidad"
     }
   },
@@ -100,6 +104,10 @@ const ELEMENTUM_I18N = {
     },
     acerca:{
       eyebrow:"About ELEMENTUM", title_line1:"Elements,", title_line2:"from scratch.",
+      title:"About Elementum", tagline:"Elements, from scratch.",
+      p1:"Elementum is a space where creativity, technology, and learning converge.",
+      p2:"We create and share resources that help turn ideas into projects, offering quality tools for those who enjoy creating, experimenting, and building.",
+      p3:"We're constantly growing, adding new content, exploring new possibilities, and developing projects that expand the Elementum universe.",
       desc:"We're a small lab dedicated to instruments you can open, understand, and repair. Get notified when we launch a new kit or sample pack, plus build guides and discounts for early builders.",
       email_placeholder:"you@email.com", submit:"Subscribe",
       note:"No spam. One email per launch, nothing more.",
@@ -109,7 +117,7 @@ const ELEMENTUM_I18N = {
       brand_desc:"DIY synthesizer kits and sample packs recorded from real raw material. Built for those who want to understand what they hear.",
       col_catalog:"Catalog", catalog_kits:"DIY Kits", catalog_packs:"Sample Packs", catalog_new:"New Arrivals",
       col_support:"Support", support_guides:"Build Guides", support_bom:"Schematics & BOM", support_forum:"ELEMENTUM Forum",
-      col_connect:"Connect", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Contact",
+      col_connect:"Community", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Contact",
       copyright:"© 2026 ELEMENTUM. All rights reserved.", terms:"Terms", privacy:"Privacy"
     }
   },
@@ -155,6 +163,10 @@ const ELEMENTUM_I18N = {
     },
     acerca:{
       eyebrow:"À propos d'ELEMENTUM", title_line1:"Des éléments,", title_line2:"depuis zéro.",
+      title:"À propos d'Elementum", tagline:"Des éléments, depuis zéro.",
+      p1:"Elementum est un espace où la créativité, la technologie et l'apprentissage convergent.",
+      p2:"Nous créons et partageons des ressources qui aident à transformer des idées en projets, avec des outils de qualité pour celles et ceux qui aiment créer, expérimenter et construire.",
+      p3:"Nous grandissons constamment, en ajoutant de nouveaux contenus, en explorant de nouvelles possibilités et en développant des projets qui élargissent l'univers Elementum.",
       desc:"Nous sommes un petit laboratoire dédié aux instruments que tu peux ouvrir, comprendre et réparer. Sois averti(e) dès qu'on lance un nouveau kit ou sample pack, avec des guides de montage et des réductions pour les premiers builders.",
       email_placeholder:"toi@email.com", submit:"M'abonner",
       note:"Pas de spam. Un e-mail par lancement, rien de plus.",
@@ -164,7 +176,7 @@ const ELEMENTUM_I18N = {
       brand_desc:"Kits DIY de synthétiseurs et sample packs enregistrés à partir de matière première réelle. Conçu pour ceux qui veulent comprendre ce qu'ils entendent.",
       col_catalog:"Catalogue", catalog_kits:"Kits DIY", catalog_packs:"Sample Packs", catalog_new:"Nouveautés",
       col_support:"Support", support_guides:"Guides de Montage", support_bom:"Schémas & BOM", support_forum:"Forum ELEMENTUM",
-      col_connect:"Suivre", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Contact",
+      col_connect:"Community", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Contact",
       copyright:"© 2026 ELEMENTUM. Tous droits réservés.", terms:"Conditions", privacy:"Confidentialité"
     }
   },
@@ -206,6 +218,10 @@ const ELEMENTUM_I18N = {
     },
     acerca:{
       eyebrow:"Über ELEMENTUM", title_line1:"Elemente,", title_line2:"von Grund auf.",
+      title:"Über Elementum", tagline:"Elemente, von Grund auf.",
+      p1:"Elementum ist ein Raum, in dem Kreativität, Technologie und Lernen zusammenkommen.",
+      p2:"Wir erstellen und teilen Ressourcen, die dabei helfen, Ideen in Projekte zu verwandeln, mit hochwertigen Werkzeugen für alle, die gerne kreieren, experimentieren und bauen.",
+      p3:"Wir wachsen stetig weiter, mit neuen Inhalten, neuen Möglichkeiten und Projekten, die das Elementum-Universum erweitern.",
       desc:"Wir sind ein kleines Labor für Instrumente, die man öffnen, verstehen und reparieren kann. Erfahre als Erstes, wenn wir ein neues Kit oder Sample-Pack starten, plus Bauanleitungen und Rabatte für frühe Builder.",
       email_placeholder:"du@email.com", submit:"Abonnieren",
       note:"Kein Spam. Eine E-Mail pro Launch, nicht mehr.",
@@ -215,7 +231,7 @@ const ELEMENTUM_I18N = {
       brand_desc:"DIY-Synthesizer-Kits und Sample-Packs, aufgenommen aus echtem Rohmaterial. Gebaut für alle, die verstehen wollen, was sie hören.",
       col_catalog:"Katalog", catalog_kits:"DIY-Kits", catalog_packs:"Sample Packs", catalog_new:"Neuheiten",
       col_support:"Support", support_guides:"Bauanleitungen", support_bom:"Schaltpläne & Stücklisten", support_forum:"ELEMENTUM-Forum",
-      col_connect:"Verbinden", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Kontakt",
+      col_connect:"Community", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Kontakt",
       copyright:"© 2026 ELEMENTUM. Alle Rechte vorbehalten.", terms:"AGB", privacy:"Datenschutz"
     }
   },
@@ -257,6 +273,10 @@ const ELEMENTUM_I18N = {
     },
     acerca:{
       eyebrow:"ELEMENTUMについて", title_line1:"エレメントを、", title_line2:"ゼロから。",
+      title:"Elementumについて", tagline:"エレメントを、ゼロから。",
+      p1:"Elementumは、創造性、テクノロジー、学びが交わる場所です。",
+      p2:"アイデアをプロジェクトへと変える手助けをするリソースを制作・共有し、創作・実験・制作を楽しむ人々に質の高いツールを提供しています。",
+      p3:"常に成長を続け、新しいコンテンツを追加し、新たな可能性を探り、Elementumの世界を広げるプロジェクトを開発しています。",
       desc:"私たちは、開けて、理解して、修理できる楽器のための小さなラボです。新しいキットやサンプルパックを発売する際の通知、ビルドガイド、早期購入者向けの割引をお届けします。",
       email_placeholder:"you@email.com", submit:"登録する",
       note:"スパムはありません。発売ごとに1通のメールのみ。",
@@ -266,7 +286,7 @@ const ELEMENTUM_I18N = {
       brand_desc:"実際の素材から録音されたDIYシンセサイザーキットとサンプルパック。音の仕組みを理解したい人のために作られました。",
       col_catalog:"カタログ", catalog_kits:"DIYキット", catalog_packs:"サンプルパック", catalog_new:"新着",
       col_support:"サポート", support_guides:"ビルドガイド", support_bom:"回路図とBOM", support_forum:"ELEMENTUMフォーラム",
-      col_connect:"つながる", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"お問い合わせ",
+      col_connect:"Community", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"お問い合わせ",
       copyright:"© 2026 ELEMENTUM. All rights reserved.", terms:"利用規約", privacy:"プライバシー"
     }
   }
