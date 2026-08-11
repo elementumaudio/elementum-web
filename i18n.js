@@ -55,7 +55,7 @@ const ELEMENTUM_I18N = {
       success:"¡Gracias! Revisa tu correo para confirmar la suscripción."
     },
     footer:{
-      brand_desc:"Kits DIY de sintetizadores y sample packs grabados desde materia prima real. Construido para quien quiere entender lo que suena.",
+      brand_desc:"Samples y herramientas sonoras creadas con precisión. Para quienes buscan explorar nuevas posibilidades y desarrollar su propio sonido.",
       col_catalog:"Catálogo", catalog_kits:"Kits DIY", catalog_packs:"Sample Packs", catalog_new:"Novedades",
       col_support:"Soporte", support_guides:"Guías de Construcción", support_bom:"Esquemas & BOM", support_forum:"Foro ELEMENTUM",
       col_connect:"Community", connect_instagram:"Instagram", connect_youtube:"YouTube", connect_contact:"Contacto",
