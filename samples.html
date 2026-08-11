@@ -85,10 +85,8 @@
           <div class="product-card-media">
             <img src="assets/essentials-kicks.jpg" alt="Essentials — Kicks I" loading="lazy">
             <button class="preview-btn" type="button" aria-label="Escuchar preview">
-              <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              <svg class="icon-pause" viewBox="0 0 24 24" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </button>
-            <div class="preview-bar"><div class="preview-bar-fill"></div></div>
           </div>
           <div class="product-card-info">
             <span class="product-card-name">Essentials — Kicks I</span>
@@ -100,10 +98,8 @@
           <div class="product-card-media">
             <img src="assets/essentials-snares.jpg" alt="Essentials — Snares I" loading="lazy">
             <button class="preview-btn" type="button" aria-label="Escuchar preview">
-              <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              <svg class="icon-pause" viewBox="0 0 24 24" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </button>
-            <div class="preview-bar"><div class="preview-bar-fill"></div></div>
           </div>
           <div class="product-card-info">
             <span class="product-card-name">Essentials — Snares I</span>
@@ -115,10 +111,8 @@
           <div class="product-card-media">
             <img src="assets/essentials-claps.jpg" alt="Essentials — Claps I" loading="lazy">
             <button class="preview-btn" type="button" aria-label="Escuchar preview">
-              <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              <svg class="icon-pause" viewBox="0 0 24 24" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </button>
-            <div class="preview-bar"><div class="preview-bar-fill"></div></div>
           </div>
           <div class="product-card-info">
             <span class="product-card-name">Essentials — Claps I</span>
@@ -130,10 +124,8 @@
           <div class="product-card-media">
             <img src="assets/essentials-hats.jpg" alt="Essentials — Hats I" loading="lazy">
             <button class="preview-btn" type="button" aria-label="Escuchar preview">
-              <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              <svg class="icon-pause" viewBox="0 0 24 24" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </button>
-            <div class="preview-bar"><div class="preview-bar-fill"></div></div>
           </div>
           <div class="product-card-info">
             <span class="product-card-name">Essentials — Hats I</span>
@@ -191,6 +183,23 @@
     </div>
   </div>
 </footer>
+
+<div class="preview-dock" id="previewDock" hidden>
+  <img id="dockThumb" class="dock-thumb" src="" alt="">
+  <button class="dock-playpause" id="dockPlayPause" type="button" aria-label="Reproducir / Pausar">
+    <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </button>
+  <div class="dock-info">
+    <span id="dockName" class="dock-name"></span>
+    <span id="dockTime" class="dock-time">0:00</span>
+  </div>
+  <canvas id="dockWave" class="dock-wave" width="900" height="44"></canvas>
+  <span class="dock-tag" id="dockTag">Free</span>
+  <button class="dock-close" id="dockClose" type="button" aria-label="Cerrar reproductor">
+    <svg viewBox="0 0 24 24"><path d="M6.4 5 5 6.4 10.6 12 5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6z"/></svg>
+  </button>
+</div>
 
 <script src="script.js" defer></script>
 <script src="preview-player.js" defer></script>

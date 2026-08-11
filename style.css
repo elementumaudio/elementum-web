@@ -564,30 +564,22 @@
   }
   .product-card-media{ position:relative; }
   .preview-btn{
-    position:absolute; left:12px; bottom:12px; z-index:2;
-    width:38px; height:38px; border-radius:50%;
+    position:absolute; inset:0; margin:auto;
+    width:52px; height:52px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    background:rgba(10,11,7,0.72); backdrop-filter:blur(2px);
-    border:1px solid var(--line-strong);
+    background:rgba(10,11,7,0.35);
+    border:1.5px solid rgba(237,232,218,0.75);
     color:var(--paper);
-    transition:background .2s ease, border-color .2s ease, transform .2s ease;
+    opacity:0; transform:scale(0.85);
+    transition:opacity .2s ease, transform .2s ease, background .2s ease, border-color .2s ease;
   }
-  .preview-btn:hover{ border-color:var(--verdigris); transform:scale(1.08); }
+  .product-card:hover .preview-btn,
   .preview-btn.playing{
-    background:linear-gradient(90deg, #3E8FE0, var(--verdigris), var(--paper));
-    color:var(--bg); border-color:transparent;
+    opacity:1; transform:scale(1);
   }
-  .preview-btn svg{ width:16px; height:16px; fill:currentColor; margin-left:1px; }
-  .preview-btn.playing svg{ margin-left:0; }
-  .preview-bar{
-    position:absolute; left:0; right:0; bottom:0; z-index:2;
-    height:3px; background:rgba(10,11,7,0.5);
-  }
-  .preview-bar-fill{
-    height:100%; width:0%;
-    background:linear-gradient(90deg, #3E8FE0, var(--verdigris), var(--paper));
-    transition:width .1s linear;
-  }
+  .preview-btn:hover{ background:rgba(10,11,7,0.55); border-color:var(--paper); }
+  .preview-btn svg{ width:18px; height:18px; fill:var(--paper); margin-left:2px; }
+  .preview-btn.playing svg{ opacity:0.6; }
   .product-card-info{
     display:flex; align-items:center; justify-content:space-between;
     gap:10px; padding:13px 16px;
@@ -606,6 +598,55 @@
   }
   .products-note{
     margin-top:22px; font-family:var(--mono); font-size:0.72rem; color:var(--stone);
+  }
+
+  /* ---------- FIXED PREVIEW DOCK (bottom player) ---------- */
+  .preview-dock{
+    position:fixed; left:0; right:0; bottom:0; z-index:200;
+    display:flex; align-items:center; gap:16px;
+    padding:12px clamp(16px,4vw,32px);
+    background:#0A0B07; border-top:1px solid var(--line-strong);
+    box-shadow:0 -8px 30px rgba(0,0,0,0.4);
+  }
+  .preview-dock[hidden]{ display:none; }
+  .dock-thumb{
+    width:44px; height:44px; border-radius:3px; object-fit:cover; flex-shrink:0;
+  }
+  .dock-playpause{
+    width:38px; height:38px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--paper); color:var(--bg);
+    transition:filter .2s ease;
+  }
+  .dock-playpause:hover{ filter:brightness(0.9); }
+  .dock-playpause svg{ width:16px; height:16px; fill:currentColor; margin-left:2px; }
+  .dock-playpause .icon-pause{ margin-left:0; }
+  .dock-info{
+    display:flex; flex-direction:column; gap:2px; flex-shrink:0; min-width:120px;
+    font-family:var(--mono);
+  }
+  .dock-name{ font-size:0.75rem; color:var(--paper); letter-spacing:0.02em; text-transform:uppercase; }
+  .dock-time{ font-size:0.66rem; color:var(--stone); }
+  .dock-wave{ flex:1; height:44px; cursor:pointer; }
+  .dock-tag{
+    flex-shrink:0; font-family:var(--mono);
+    font-size:0.68rem; letter-spacing:0.05em; text-transform:uppercase;
+    color:var(--bg); background:var(--verdigris);
+    padding:6px 11px; border-radius:2px; font-weight:600;
+  }
+  .dock-close{
+    flex-shrink:0; width:28px; height:28px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--stone); transition:color .2s ease, background .2s ease;
+  }
+  .dock-close:hover{ color:var(--paper); background:var(--bg-panel-2); }
+  .dock-close svg{ width:14px; height:14px; fill:currentColor; }
+  body:has(.preview-dock:not([hidden])){ padding-bottom:70px; }
+  @media (max-width:760px){
+    .preview-dock{ gap:10px; padding:10px 14px; }
+    .dock-info{ min-width:0; max-width:90px; }
+    .dock-name{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .dock-tag{ display:none; }
   }
 
   /* ---------- PRODUCT TEASER (homepage, hover-only tag) ---------- */
