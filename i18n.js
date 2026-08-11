@@ -25,7 +25,7 @@ const ELEMENTUM_I18N = {
       gumroad_eyebrow:"Ultimos Lanzamientos",
       gumroad_title:"Más Sonido,",
       gumroad_title2:"Más Elementos",
-      gumroad_note:"Cada tarjeta te lleva directo a su página de Gumroad.",
+      gumroad_note:"Nada termina en el sonido original.Cada colección es materia para crear, transformar y hacer algo propio.100% libre de regalías.",
       tile1:{name:"Sine — Oscilador VCO", desc:"Bobinado a mano, BOM completo, sin SMD."},
       tile2:{name:"Forge — Filtro SVF", desc:"Resonancia hasta autooscilación total."},
       tile3:{name:"Circuit — Starter Eurorack", desc:"Todo para armar tu primer rack de 3 módulos."},
