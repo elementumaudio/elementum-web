@@ -9,7 +9,7 @@ const ELEMENTUM_I18N = {
     home:{
       eyebrow:"ELEMENTUM SAMPLES",
       h1_line1:"MOLDEA TU", h1_span:"PROPIO", h1_line2:"SONIDO",
-      sub:"ELEMENTUM diseña kits de sintetizadores DIY y sample packs grabados desde materiales reales — metal, agua, madera, cobre. Cada producto es un elemento en su tabla propia: crudo, funcional, tuyo.",
+      sub:"Una colección de sonidos para explorar nuevas ideas, romper lo predecible y construir algo que tenga tu propia identidad.",
       cta_primary:"Explorar Elementos", cta_secondary:"Probar el Osciloscopio", scroll:"Novedades",
       releases_eyebrow:"Últimos Lanzamientos", view_more:"Ver Más",
       releases_eyebrow:"Últimos Lanzamientos",
