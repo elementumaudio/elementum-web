@@ -10,7 +10,7 @@ const ELEMENTUM_I18N = {
       eyebrow:"ELEMENTUM SAMPLES",
       h1_line1:"MOLDEA TU", h1_span:"PROPIO", h1_line2:"SONIDO",
       sub:"Una colección de sonidos para explorar nuevas ideas, romper lo predecible y construir algo que tenga tu propia identidad.",
-      cta_primary:"Explorar Samples", cta_secondary:"Probar el Osciloscopio", scroll:"Novedades",
+      cta_primary:"Explorar Samples", cta_secondary:"DIY KITS", scroll:"Novedades",
       releases_eyebrow:"Últimos Lanzamientos", view_more:"Ver Más",
       releases_eyebrow:"Últimos Lanzamientos",
       releases_title:"Sonido,",
