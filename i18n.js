@@ -22,7 +22,7 @@ const ELEMENTUM_I18N = {
       desc:"Ocho elementos, dos familias: kits DIY para construir tu instrumento, y sample packs grabados a partir de materia prima real. Cada tile lleva su número atómico real.",
       filter_all:"Todos", filter_kit:"Kits DIY", filter_pack:"Sample Packs",
       cat_kit:"Kit DIY", cat_pack:"Sample Pack", price_label:"Desde",
-      gumroad_eyebrow:"Disponible en Gumroad",
+      gumroad_eyebrow:"Ultimos Lanzamientos",
       gumroad_title:"Más Sonido,",
       gumroad_title2:"Más Elementos",
       gumroad_note:"Cada tarjeta te lleva directo a su página de Gumroad.",
