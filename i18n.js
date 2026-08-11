@@ -7,7 +7,7 @@ const ELEMENTUM_I18N = {
   es: {
     nav:{ home:"Inicio", samples:"Sounds", soundsets:"Elementum Lab", diy:"DIY KITs", about:"Acerca", community:"Community", coming_soon:"Coming Soon" },
     home:{
-      eyebrow:"DIY SYNTHS & SAMPLE ELEMENTS",
+      eyebrow:"ELEMENTUM SAMPLES",
       h1_line1:"MOLDEA TU", h1_span:"PROPIO", h1_line2:"SONIDO",
       sub:"ELEMENTUM diseña kits de sintetizadores DIY y sample packs grabados desde materiales reales — metal, agua, madera, cobre. Cada producto es un elemento en su tabla propia: crudo, funcional, tuyo.",
       cta_primary:"Explorar Elementos", cta_secondary:"Probar el Osciloscopio", scroll:"Novedades",
@@ -66,7 +66,7 @@ const ELEMENTUM_I18N = {
   en: {
     nav:{ home:"Home", samples:"Sounds", soundsets:"Elementum Lab", diy:"DIY KITs", about:"About", community:"Community", coming_soon:"Coming Soon" },
     home:{
-      eyebrow:"DIY SYNTHS & SAMPLE ELEMENTS",
+      eyebrow:"ELEMENTUM SAMPLES",
       h1_line1:"SOLDER YOUR", h1_span:"OWN", h1_line2:"SOUND",
       sub:"ELEMENTUM designs DIY synthesizer kits and sample packs recorded from real materials — metal, water, wood, copper. Every product is an element on its own table: raw, functional, yours.",
       cta_primary:"Explore Elements", cta_secondary:"Try the Oscilloscope", scroll:"Latest",
@@ -125,7 +125,7 @@ const ELEMENTUM_I18N = {
   fr: {
     nav:{ home:"Accueil", samples:"Sounds", soundsets:"Elementum Lab", diy:"DIY KITs", about:"À propos", community:"Community", coming_soon:"Coming Soon" },
     home:{
-      eyebrow:"DIY SYNTHS & SAMPLE ELEMENTS",
+      eyebrow:"ELEMENTUM SAMPLES",
       h1_line1:"SOUDE TON", h1_span:"PROPRE", h1_line2:"SON",
       sub:"ELEMENTUM conçoit des kits de synthétiseurs DIY et des sample packs enregistrés à partir de matériaux réels — métal, eau, bois, cuivre. Chaque produit est un élément de sa propre table : brut, fonctionnel, à toi.",
       cta_primary:"Explorer les Éléments", cta_secondary:"Essayer l'Oscilloscope", scroll:"Nouveautés",
@@ -184,7 +184,7 @@ const ELEMENTUM_I18N = {
   de: {
     nav:{ home:"Start", samples:"Sounds", soundsets:"Elementum Lab", diy:"DIY KITs", about:"Über uns", community:"Community", coming_soon:"Coming Soon" },
     home:{
-      eyebrow:"DIY SYNTHS & SAMPLE ELEMENTS",
+      eyebrow:"ELEMENTUM SAMPLES",
       h1_line1:"LÖTE DEINEN", h1_span:"EIGENEN", h1_line2:"SOUND",
       sub:"ELEMENTUM entwickelt DIY-Synthesizer-Kits und Sample-Packs, aufgenommen aus echten Materialien — Metall, Wasser, Holz, Kupfer. Jedes Produkt ist ein Element in seiner eigenen Tabelle: roh, funktional, deins.",
       cta_primary:"Elemente entdecken", cta_secondary:"Oszilloskop testen", scroll:"Neuheiten",
